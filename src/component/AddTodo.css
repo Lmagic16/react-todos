@@ -1,0 +1,85 @@
+/* AddTodo组件 */
+.AddTodo {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.isShow {
+  display: block;
+}
+
+.noShow {
+  display: none;
+}
+
+.AddTodo-Box {
+  position: relative;
+  background-color: #eee;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 200px;
+  border-radius: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.AddTodo-title {
+  text-align: center;
+  margin: 0;
+  font-weight: bold;
+  color: #1c9b73;
+  font-size: 1.2em;
+}
+
+.AddTodo-input,
+.AddTodo-textarea {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  width: 75%;
+}
+
+.AddTodo-input {
+  margin-left: 19px;
+  height: 25px;
+}
+
+.AddTodo-textarea {
+  margin-left: 5px;
+  height: 80px;
+}
+
+.AddTodo-label {
+  vertical-align: top;
+  font-weight: bold;
+}
+
+.AddTodo-inputdiv {
+  margin: 10px;
+}
+
+.AddTodo-submit {
+  background-color: #1c9b73;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 75px;
+  font-size: 1em;
+  padding: 5px 10px;
+}
+
+
+.fa-times {
+  color: rgb(104, 103, 103);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+  
+  
+  

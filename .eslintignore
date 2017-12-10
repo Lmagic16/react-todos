@@ -1,0 +1,7 @@
+node_modules/*
+static/*
+turbo/*
+lib/echarts/*
+client/vendor/*
+server/datasource/thrift/*
+*.json

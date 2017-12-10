@@ -1,0 +1,76 @@
+.App {
+  position: relative;
+}
+
+/* Header组件 */
+.App-header {
+  background-color: rgb(70, 69, 69);
+  padding: 10px;
+  color: white;
+  position: relative;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.fa-plus {
+  color: #fff;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* Todos组件 */
+.item-container {
+  position: relative;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.item-createtime {
+  color: #aaa;
+  font-size: 0.8em;
+  position: absolute;
+  right: 15px;
+}
+
+.item-state {
+  display: block;
+  padding-top: 8px;
+}
+
+.item-container .fa-clock-o {
+  color: #E80000;
+}
+
+.fa-check-square-o {
+  color: #1c9b73;
+}
+
+/* Bottom组件 */
+.App-classify {
+  text-align: center;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+
+.App-all,
+.App-active,
+.App-completed {
+  display: inline-block;
+  width: 33%;
+  font-size: 1.5em;
+  color: rgb(140, 139, 139);
+  cursor: pointer;
+}
+
+.App-classify .isShow{
+  color: #1c9b73;
+}
+
+
