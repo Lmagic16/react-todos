@@ -19,7 +19,8 @@
 
 .TodoDetail-descrip,
 .TodoDetail-state,
-.TodoDetail-thought {
+.TodoDetail-thought,
+.TodoDetail-completedTime {
     margin: 15px 0px;
 }
 
@@ -28,7 +29,8 @@
 }
 
 .TodoDetail-state,
-.TodoDetail-thought {
+.TodoDetail-thought,
+.TodoDetail-completedTime {
     color: rgb(51, 121, 141);
     font-weight: bold;
 }
@@ -37,7 +39,7 @@
     color: red;
 }
 
-.TodoDetail-state .fa-check-circle {
+.TodoDetail-state .fa-check-square-o {
     color: #1c9b73;
 }
 
@@ -50,15 +52,25 @@
     box-sizing: border-box;
 }
 
-.TodoDetail-done {
-    background-color: #1c9b73;
+.TodoDetail-done,
+.TodoDetail-delete {
     color: #fff;
     cursor: pointer;
     font-size: 1em;
     padding: 5px 10px;
-  }
+}
 
-.TodoDetail-thought .TodoDetail-thoughtText {
+.TodoDetail-done {
+    background-color: #1c9b73;
+}
+
+.TodoDetail-delete {
+    background-color: rgb(209, 74, 74);
+    margin-left: 20px;
+}
+
+.TodoDetail-thought .TodoDetail-thoughtText,
+.TodoDetail-completedTime .TodoDetail-completedTimeText {
     color: #000;
     font-weight: normal;
 }

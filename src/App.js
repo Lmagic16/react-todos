@@ -90,6 +90,7 @@ class App extends Component {
     this.handleTodoItem = this.handleTodoItem.bind(this);
     this.handleDone = this.handleDone.bind(this);
     this.handleUndo = this.handleUndo.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
     this.state = {
       classify: 'all',
       isAdd: false,
@@ -100,8 +101,8 @@ class App extends Component {
           name: '学习react',
           state: 'active',
           details: 'do todolist',
-          createTime: '12月09号 17:25',
-          completedTime: '12月09号 17:25',
+          createTime: '2017/12/10 上午10:25:53',
+          completedTime: '',
           thought:'',
         },
         {
@@ -109,8 +110,8 @@ class App extends Component {
           name: '洗衣服',
           state: 'active',
           details: 'own things',
-          createTime: '12月09号 18:25',
-          completedTime: '12月09号 17:25',
+          createTime: '2017/12/09 下午05:22:33',
+          completedTime: '',
           thought:'',
         },
         {
@@ -118,8 +119,8 @@ class App extends Component {
           name: '煮饭',
           state: 'completed',
           details: 'do todolist',
-          createTime: '12月10号 19:25',
-          completedTime: '12月09号 17:25',
+          createTime: '2017/12/10 上午09:21:08',
+          completedTime: '2017/12/11 上午09:50:13',
           thought:'done well',
         }
       ]
@@ -141,22 +142,27 @@ class App extends Component {
     this.setState({
       todos: newTodos,
     });
+    localStorage.setItem('reactTodos', JSON.stringify(newTodos));/* 更新本地存储 */
   }
   handleTodoItem(item) {
     this.setState({
       detailItem: item,
     });
   }
-  handleDone(item) {
+  handleDone(item,thought) {
     let newTodos = this.state.todos.slice(0);
+    const time = new Date().toLocaleString();
     newTodos.forEach((todo) => {
       if(todo.id === item.id) {
         todo.state = 'completed';
+        todo.thought = thought;
+        todo.completedTime = time;
       }
     });
     this.setState({
       todos: newTodos,
     });
+    localStorage.setItem('reactTodos', JSON.stringify(newTodos));/* 更新本地存储 */
     history.push('/todos');
   }
   handleUndo(item) {
@@ -169,7 +175,30 @@ class App extends Component {
     this.setState({
       todos: newTodos,
     });
+    localStorage.setItem('reactTodos', JSON.stringify(newTodos));/* 更新本地存储 */
     history.push('/todos');
+  }
+  handleDelete(item) {
+    let tempTodos = this.state.todos.slice(0);
+    let newTodos = tempTodos.filter((todo) => {
+      return todo.id !== item.id;
+    });
+    this.setState({
+      todos: newTodos,
+    });
+    localStorage.setItem('reactTodos', JSON.stringify(newTodos));/* 更新本地存储 */
+    history.push('/todos');
+  }
+  componentDidMount() {
+    const todos = this.state.todos;
+    if(!localStorage.getItem('reactTodos')) {/* 检查本地存储 */
+      localStorage.setItem('reactTodos', JSON.stringify(todos));
+    }else{
+      const storeTodos = JSON.parse(localStorage.getItem('reactTodos'));
+      this.setState({
+        todos:storeTodos,
+      });
+    }
   }
   render() {
     return (
@@ -185,7 +214,7 @@ class App extends Component {
             )} />
             <Route path="/todoDetail" render={(props) => (
               <TodoDetail {...props} item={this.state.detailItem} handleDone={this.handleDone}
-                handleUndo={this.handleUndo}
+                handleUndo={this.handleUndo} handleDelete={this.handleDelete}
               ></TodoDetail>
             )} />
           </Switch>
