@@ -34,7 +34,7 @@
 ```
 
 ### overview
-![](src/pics/todo1@2x.png){:width="50%"}
+![](src/pics/todo1@2x.png)
 ![](src/pics/todo2@2x.png)
 ![](src/pics/todo3@2x.png)
 ![](src/pics/todo4@2x.png)
