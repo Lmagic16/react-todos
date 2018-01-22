@@ -1,0 +1,76 @@
+/* TodoDetail组件 */
+.TodoDetail {
+    padding: 20px;
+    padding-top: 20px;
+    position: relative;
+}
+
+.TodoDetail-name {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.TodoDetail-time {
+    right: 20px;
+    top: 25px;
+    color: #888;
+    position: absolute;
+}
+
+.TodoDetail-descrip,
+.TodoDetail-state,
+.TodoDetail-thought,
+.TodoDetail-completedTime {
+    margin: 15px 0px;
+}
+
+.TodoDetail-descrip {
+  font-size: 0.9em;
+}
+
+.TodoDetail-state,
+.TodoDetail-thought,
+.TodoDetail-completedTime {
+    color: rgb(51, 121, 141);
+    font-weight: bold;
+}
+
+.TodoDetail-state .fa-clock-o {
+    color: red;
+}
+
+.TodoDetail-state .fa-check-square-o {
+    color: #1c9b73;
+}
+
+.TodoDetail-textarea {
+    margin-top: 10px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+}
+
+.TodoDetail-done,
+.TodoDetail-delete {
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 5px 10px;
+}
+
+.TodoDetail-done {
+    background-color: #1c9b73;
+}
+
+.TodoDetail-delete {
+    background-color: rgb(209, 74, 74);
+    margin-left: 20px;
+}
+
+.TodoDetail-thought .TodoDetail-thoughtText,
+.TodoDetail-completedTime .TodoDetail-completedTimeText {
+    color: #000;
+    font-weight: normal;
+}
