@@ -1,5 +1,5 @@
-## TypeScript练手项目 ts-react-todo
 用 TypeScript 改写 react-todo 项目
+
 ### 所用技术
 框架：React
 语言：JavaScript、TypeScript（类型约束）
@@ -43,7 +43,7 @@ $npm install
 $npm start
 
 ### 项目详情
-见项目react-todo
+见项目[react-todo](https://github.com/Lmagic16/react-todos)
 
 ### ts记录
 - 开发环境下需要安装相关@types包，例如：`$ npm install @types/react --save-dev`
