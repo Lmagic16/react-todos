@@ -206,7 +206,7 @@ class App extends Component {
         <Header changeStateisAdd={this.changeStateisAdd} />
         <Router history={history}>
           <Switch>
-            <Route exact path="/todos" render={(props) => (
+            <Route exact path="/" render={(props) => (
               <Todos {...props} todos={this.state.todos} classify={this.state.classify} handleTodoItem={this.handleTodoItem} ></Todos>
             )} />
             <Route path="/todos" render={(props) => (
